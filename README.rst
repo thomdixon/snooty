@@ -61,28 +61,29 @@ Bugs
 There are a number of known bugs that can make using this software
 annoying.
 
-- *Snooty is not actually a daemon.* I have yet to write the code for
-   daemonizing Snooty and controlling the resulting process. To run
-   Snooty in the background using bash, zsh, or similar, execute::
+- *Snooty is not actually a daemon.* 
+  I have yet to write the code for daemonizing Snooty and controlling
+  the resulting process. To run Snooty in the background using bash,
+  zsh, or similar, execute::
 
    $ python snooty.py & disown
 
    To stop Snooty, you must find the pid and ``kill`` it.
 
-- *Currently there is no support for translations.* I simply haven't
-   gotten around to implementing localizations, thus everything is
-   hardcoded in English.
+- *Currently there is no support for translations.*
+  I simply haven't gotten around to implementing localizations, thus
+  everything is hardcoded in English.
 
-- *Plugins run in the main thread.* This means you have to be very
-   careful in how you design them (e.g., using timeouts instead of
-   hogging the processor).
+- *Plugins run in the main thread.*
+  This means you have to be very careful in how you design them (e.g.,
+  using timeouts instead of hogging the processor).
 
-- *When a plugin fails to load, so does the daemon.* Any exception
-   raised during the loading of a plugin is not caught, and will thus
-   prevent the daemon from starting. This can be particularly annoying
-   if you have plugins listed in the ``plugins`` configuration option
-   that you don't have the dependencies to run (e.g., a wicd plugin
-   when you use NetworkManager).
+- *When a plugin fails to load, so does the daemon.*
+  Any exception raised during the loading of a plugin is not caught,
+  and will thus prevent the daemon from starting. This can be
+  particularly annoying if you have plugins listed in the ``plugins``
+  configuration option that you don't have the dependencies to run
+  (e.g., a wicd plugin when you use NetworkManager).
 
 Plugins
 -------
@@ -123,7 +124,7 @@ The available configuration options are the following.
     Self-explanatory.
 
 ``buddy_signed_off``
-    Also self-explanatory.
+     Also self-explanatory.
 
 Bugs
 ++++
