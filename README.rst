@@ -66,9 +66,9 @@ annoying.
   the resulting process. To run Snooty in the background using bash,
   zsh, or similar, execute::
 
-   $ python snooty.py & disown
+    $ python snooty.py & disown
 
-   To stop Snooty, you must find the pid and ``kill`` it.
+  To stop Snooty, you must find the pid and ``kill`` it.
 
 - *Currently there is no support for translations.*
   I simply haven't gotten around to implementing localizations, thus

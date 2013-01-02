@@ -20,6 +20,7 @@ def status_changed_cb(state, details):
             snooty.simple_notify('wicd', essid, stat)
         if wired_connecting:
             snooty.simple_notify('wicd', _('Wired Network'), stat)
+
     elif state in (misc.WIRELESS, misc.WIRED) and this.prev_state == misc.CONNECTING:
         wired_ip = wired.GetWiredIP('')
         iwconfig = wireless.GetIwconfig()
@@ -30,6 +31,7 @@ def status_changed_cb(state, details):
             snooty.simple_notify('wicd', _('Wired Network'), _('Connected'))
         elif network and wireless_ip:
             snooty.simple_notify('wicd', network, _('Connected'))
+
     elif state == misc.NOT_CONNECTED and this.prev_state in (misc.WIRELESS, misc.WIRED):
         if this.prev_state == misc.WIRED:
             snooty.simple_notify('wicd', _('Wired Network'), _('Not connected'))
