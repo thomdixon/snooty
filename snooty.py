@@ -41,9 +41,6 @@ class Snooty(dbus.service.Object):
         app_name = app_name.encode('unicode_escape')
         summary = summary.encode('unicode_escape')
         body = body.encode('unicode_escape')
-
-        # Construct the formatted string
-
         
         # Print the notification as a message
         if self.config.getboolean('snooty', 'use_message'):
