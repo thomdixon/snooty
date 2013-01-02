@@ -55,7 +55,6 @@ Current configuration options are as follows.
 ``plugins``
     This is a whitelist of available plugins that should be loaded
     when the daemon starts.
-s.
 Bugs
 ----
 
@@ -69,6 +68,14 @@ annoying.
    $ python snooty.py & disown
 
    To stop Snooty, you must find the pid and ``kill`` it.
+
+- *Currently there is no support for translations.* I simply haven't
+   gotten around to implementing localizations, thus everything is
+   hardcoded in English.
+
+- *Plugins run in the main thread.* This means you have to be very
+   careful in how you design them (e.g., using timeouts instead of
+   hogging the processor).
 
 - *When a plugin fails to load, so does the daemon.* Any exception
    raised during the loading of a plugin is not caught, and will thus
@@ -124,3 +131,10 @@ Bugs
 - Currently, when ``buddy_signed_on`` is enabled, and the user signs
   on, a flood of notifications occurs. The fix for this is simple, I
   just have to get around to it.
+
+wicd
+~~~~
+
+A simple plugin to announce your network connectivity status using
+``wicd``. Currently, notifications are given for "Disconnected,"
+"Connecting," and "Connected" statuses.
